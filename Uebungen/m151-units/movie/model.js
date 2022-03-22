@@ -16,6 +16,11 @@ let data = [{
     year: "2019"
 }, ];
 
+const connection = await mysql.createConnection({ 
+    host   : "127.0.0.1",   user   : "root",   password: "sml12345", database: "movie-db"  , 
+}); 
+await connection.connect() ;
+
 function getNextId() {
     return Math.max(...data.map((movie) => movie.id)) + 1;
 }
